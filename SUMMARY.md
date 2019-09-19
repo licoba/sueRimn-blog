@@ -1,6 +1,6 @@
 # Table of contents
 
-* [前言](README.md)
+* [Blog](README.md)
 * [Resume](resume.md)
 * [HTML5](html5/README.md)
   * [HTML5新特性](html5/html5-xin-te-xing.md)
