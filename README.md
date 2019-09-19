@@ -10,8 +10,8 @@ description: 主要整理记录平时中的用到的前端知识体系以及一�
 * [GitHub阅读](https://github.com/sueRimn/sueRimn-blog)
 * [GitHub地址](https://github.com/sueRimn)
 * 博主：[sueRimn](https://github.com/sueRimn)
-* Email：[suerimn@mail.com](https://segmentfault.com/u/suerimn)
-* segmentfault
+* Email：suerimn@mail.com
+* [segmentfault](https://segmentfault.com/u/suerimn)
 
 发现博文有问题，可以[提交issue](https://github.com/sueRimn/sueRimn-blog/issues)指正，谢谢。
 
