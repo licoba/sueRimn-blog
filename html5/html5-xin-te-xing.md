@@ -1,7 +1,5 @@
 # HTML5新特性
 
-
-
 ## HTML5
 
 > 关于属性的兼容性，可以使用[Can I Use](https://caniuse.com/)查询。
