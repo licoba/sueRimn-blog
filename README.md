@@ -33,6 +33,6 @@ description: 主要整理记录平时中的用到的前端知识体系以及一�
 * [webRTC](webrtc.md)
 * [性能优化](xing-neng-you-hua.md)
 * [兼容处理](jian-rong-chu-li.md)
-* [前端安全](qian-duan-an-quan.md)
+* [前端安全](qian-duan-an-quan/)
 * [Interview](interview.md)
 
