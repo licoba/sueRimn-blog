@@ -8,6 +8,7 @@
   * [CSS知识点](css3/css-zhi-shi-dian.md)
   * [【译】Flexbox完全指南](css3/yi-flexbox-wan-quan-zhi-nan.md)
 * [JavaScript](javascript/README.md)
+  * [异步操作](javascript/yi-bu-cao-zuo.md)
   * [JavaScript知识点](javascript/javascript-zhi-shi-dian.md)
   * [执行上下文与this](javascript/zhi-hang-shang-xia-wen-yu-this.md)
   * [ES6迷你教程](javascript/es6-mi-ni-jiao-cheng.md)
@@ -33,6 +34,4 @@
 ## 翻译
 
 * [Flexbox完全指南](fan-yi/flexbox-wan-quan-zhi-nan.md)
-
-## 开源项目
 
