@@ -9,7 +9,7 @@
 
 在这里插入图片描述
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 #### 1.媒体捕获`MediaStream`（又名`getUserMedia`） <a id="item-1"></a>
 
