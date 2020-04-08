@@ -1,5 +1,9 @@
 # JavaScript知识点
 
+### 
+
+## JavaScript
+
 ### 数据类型
 
 一共有七种数据类型，主要为两大类：原始类型、对象类型
@@ -58,14 +62,14 @@
 
 #### 方法
 
-**添加/移除元素 pop/push、shift/unshift**
+**添加/移除元素 pop/push、shift/unshift（改变原数组）**
 
 * `unshift`：在数组首部添加一个元素
 * `shift`：取出并返回第一个元素
 * `push`：在末尾添加一个元素
 * `pop`:取出并返回最后一个元素
 
-**添加/删除/插入元素splice\(\)/slice\(\)**
+**添加/删除/插入元素splice\(\)（改变原数组）/slice\(\)**
 
 `arr.splice(index[], deleteCount, elem1, ..., elemN])`
 
@@ -75,9 +79,9 @@
 
 **合并数组concat\(\)**
 
-`arr.concat(arg1, arg2...)`
+`arr.concat(arg1, arg2...)`，浅拷贝
 
-**查询数组 sort\(\)**
+**查询数组**
 
 * 1.`indexOf/lastIndexOf` 和 `includes`
   * `arr.indexOf(item, from)` 从索引 `from` 查询 `item`，如果找到返回索引，否则返回 `-1`
@@ -98,6 +102,10 @@
 返回`true`停止查询，返回`item`，没有查询到结果则返回`undefined`。
 
 `arr.findIndex`与之一样，不过返回的是元素索引而不是元素本身。
+
+* 3.`some`和`every`
+  * `some`：查到一项`true`全为`true`
+  * `every`：查到一项`false`全为`false`
 
 **过滤数组filter\(\)**
 
@@ -121,7 +129,7 @@ let result = arr.map(function(item, index, array) {
 })
 ```
 
-* `sort()`:数组排序
+* `sort()`:数组排序，会改变原数组
 * `reverse()`:颠倒数组，然后返回它
 
 **迭代forEach**
@@ -140,6 +148,7 @@ arr.forEach(function(item, index, array) {
 * `for...of`：不能获取当前元素的索引,只能访问 `items`
 * `for...in`（不推荐）
 * `forEach`
+* `map`：遍历数组返回新数组
 
 ### 对象\(`Object`\)
 
@@ -277,6 +286,8 @@ let copyObj = origin => {
 
 **this关键字**
 
+> this总是指向函数的直接调用者
+
 **1.涵义**
 
 * `this`在构造函数中，表示实例对象
@@ -365,5 +376,109 @@ new();//我叫jack，21
 
 **作用域**
 
-JavaScript语言的作用域仅存在于函数范围中
+JavaScript语言的作用域仅存在于函数范围中，作用域分为全局作用域和函数作用域。
+
+作用域有上下级关系，嵌套的函数存在层层的上下级关系。
+
+**作用域用处**
+
+隔离变量，不同作用域下的同名变量不会有冲突。
+
+**作用域链**
+
+当函数创建变量，变量在函数作用域中取值时，查不到值就会向上级作用域去查找，直到全局作用域，这么一个过程形成的链条就叫作用域链。
+
+#### 闭包
+
+闭包就是能够读取其他函数内部变量的函数。函数即闭包。
+
+```text
+function one () {
+    let a = 1;
+    function two () {
+        console.log(a)
+    }
+    return two()
+}
+// 函数two就形成闭包
+```
+
+**闭包的特征**
+
+* 函数内嵌套函数
+* 内部函数可以引用外层的参数和变量
+* 参数和变量不会受制于垃圾回收机制
+
+**闭包的优缺点**
+
+* 封装对象的私有的变量和方法
+  * 优点：避免全局污染
+  * 缺点：内存常驻，增加内存开销，使用不当造成内存泄漏
+* 读取函数内部的变量，让变量始终保持在内存中
+
+**闭包的用处**
+
+实现封装和缓存
+
+### 模块化
+
+#### 优点
+
+* 避免变量污染和命名冲突
+* 提高代码复用性
+* 提供可维护性
+* 便于依赖关系管理
+
+#### 模块化方法
+
+**函数封装**
+
+* 避免变量污染
+* 但是外部可以随意修改内部成员，产生安全问题
+
+```text
+let module = {
+	one: 1,
+    two: 2,
+    fn1 () {
+        
+    },
+    fn2 () {
+        
+    }
+}
+```
+
+**立即执行函数**
+
+* 模块外部无法修改内部没有暴露的变量、函数
+* 但是会增加开销
+
+```text
+let myModule = (function(){
+    let var1 = 1;
+    let var2 = 2;
+    
+    function fn1(){
+    
+    } 
+    
+    function fn2(){
+    
+    }
+
+return {
+    fn1: fn1,
+    fn2: fn2
+};
+})();
+```
+
+#### 异步回调地狱
+
+**解决方法**
+
+* promise
+* generator
+* async/awit
 
