@@ -4,8 +4,6 @@
 
 ### MVVM\(Model-View-ViewModel\)模型
 
-
-
 `MVVM`分为`Model`、`View`、`ViewModel`三部分。
 
 * `Model`代表数据模型，定义数据和业务逻辑，访问数据层
@@ -49,7 +47,9 @@
 
 ### Vue响应式原理
 
-![](https://vue.docschina.org/images/data.png) `Vue`实例化时，遍历访问`data`里的所有属性，使用`Object.defineProperty`将其属性全部转换为`getter/setter`进行依赖追踪以便修改属性时进行变更通知，就是一个代理层，不管是获取数据还是什么，都是在代理层里进行，当组件渲染时，会从代理层进行代理映射，组件渲染需要什么就会放在`watcher`中，因为每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 `setter` 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新，没有与之关联的组件就不会更新。
+![](https://vue.docschina.org/images/data.png) 
+
+`Vue`实例化时，遍历访问`data`里的所有属性，使用`Object.defineProperty`将其属性全部转换为`getter/setter`进行依赖追踪以便修改属性时进行变更通知，就是一个代理层，不管是获取数据还是什么，都是在代理层里进行，当组件渲染时，会从代理层进行代理映射，组件渲染需要什么就会放在`watcher`中，因为每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 `setter` 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新，没有与之关联的组件就不会更新。
 
 ### Vue双向数据绑定和单项数据流
 
